@@ -41,14 +41,22 @@ export const SongResult = ({ song, searchedAge, onBack, onShowVisualization, onG
             <Badge variant="secondary" className="mb-4 text-lg px-4 py-2">
               {searchedAge} 歲
             </Badge>
-            {totalSongsForAge > 1 && (
-              <div className="text-sm text-muted-foreground mb-4">
-                此歲數共有 {totalSongsForAge} 首歌曲
-              </div>
-            )}
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
               <Music className="w-8 h-8 text-primary" />
             </div>
+            
+            {/* Another song button - moved to top */}
+            {onGetAnotherSong && (
+              <div className="mb-4">
+                <Button onClick={onGetAnotherSong} variant="outline" className="mb-2">
+                  <Shuffle className="w-4 h-4 mr-2" />
+                  換一首 {searchedAge} 歲的歌曲
+                </Button>
+                <div className="text-sm text-muted-foreground">
+                  此歲數共有 {totalSongsForAge} 首歌曲
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="space-y-6">
@@ -91,15 +99,6 @@ export const SongResult = ({ song, searchedAge, onBack, onShowVisualization, onG
               </div>
             )}
 
-            {/* Another song button */}
-            {onGetAnotherSong && (
-              <div className="text-center">
-                <Button onClick={onGetAnotherSong} variant="outline" className="w-full">
-                  <Shuffle className="w-4 h-4 mr-2" />
-                  換一首 {searchedAge} 歲的歌曲
-                </Button>
-              </div>
-            )}
           </div>
         </Card>
       </div>

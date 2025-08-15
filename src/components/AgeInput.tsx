@@ -30,7 +30,7 @@ export const AgeInput = ({ onAgeSubmit }: AgeInputProps) => {
             歲數如歌
           </h1>
           <p className="text-muted-foreground">
-            尋找屬於某個歲數的粵語歌曲
+            尋找屬於某個歲數的香港流行曲
           </p>
         </div>
 

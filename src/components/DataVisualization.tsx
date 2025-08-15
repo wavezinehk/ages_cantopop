@@ -37,7 +37,7 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
       chartData.push({
         age: age,
         count: ageGroups[age],
-        label: age >= 1000000 ? `${age/1000000}M` : age >= 1000 ? `${age/1000}k` : age.toString()
+        label: age >= 1000000 ? `${(age/1000000).toLocaleString()},000,000` : age.toLocaleString()
       });
     }
   });
@@ -63,7 +63,7 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
               歲數歌曲分佈圖
             </h1>
             <p className="text-muted-foreground">
-              顯示不同歲數的粵語歌曲數量統計
+              顯示不同歲數的香港流行曲數量統計
             </p>
           </div>
 
@@ -138,9 +138,9 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
               <h3 className="text-lg font-semibold mb-4 text-foreground">
                 統計摘要
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">
+                  <div className="text-3xl font-bold text-primary">
                     {songs.length}
                   </div>
                   <div className="text-sm text-muted-foreground">
@@ -148,27 +148,15 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">
-                    {Object.keys(ageGroups).length}
+                  <div className="text-3xl font-bold text-primary">
+                    {(() => {
+                      const maxCount = Math.max(...Object.values(ageGroups));
+                      const ageWithMaxSongs = Object.keys(ageGroups).find(age => ageGroups[Number(age)] === maxCount);
+                      return `${ageWithMaxSongs}歲`;
+                    })()}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    涵蓋歲數
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">
-                    {Math.max(...Object.values(ageGroups))}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    單一歲數最多歌曲
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">
-                    {Math.round(songs.length / Object.keys(ageGroups).length * 10) / 10}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    平均每歲數歌曲
+                    最多相關歌曲的歲數
                   </div>
                 </div>
               </div>
