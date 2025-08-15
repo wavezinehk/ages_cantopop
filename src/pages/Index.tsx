@@ -31,12 +31,12 @@ const Index = () => {
   };
 
   const handleGetAnotherSong = () => {
-    if (ageSeongs.length > 1) {
+    if (agesongs.length > 1) {
       // Get available indices excluding current one
-      const availableIndices = ageSeongs.map((_, index) => index).filter(index => index !== currentSongIndex);
+      const availableIndices = agesongs.map((_, index) => index).filter(index => index !== currentSongIndex);
       const randomIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
       setCurrentSongIndex(randomIndex);
-      setFoundSong(ageSeongs[randomIndex]);
+      setFoundSong(agesongs[randomIndex]);
     }
   };
 
@@ -59,8 +59,8 @@ const Index = () => {
         searchedAge={searchedAge} 
         onBack={handleBack} 
         onShowVisualization={handleShowVisualization}
-        onGetAnotherSong={ageSeongs.length > 1 ? handleGetAnotherSong : undefined}
-        totalSongsForAge={ageSeongs.length}
+        onGetAnotherSong={agesongs.length > 1 ? handleGetAnotherSong : undefined}
+        totalSongsForAge={agesongs.length}
       />
     );
   }
