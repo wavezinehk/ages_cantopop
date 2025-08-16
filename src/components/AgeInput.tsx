@@ -32,7 +32,7 @@ export const AgeInput = ({ onAgeSubmit }: AgeInputProps) => {
             <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
               <Music className="w-6 h-6 text-primary" />
             </div>
-            <h1 className="text-3xl font-bold text-foreground mb-2">
+            <h1 className="text-3xl font-chenyu text-foreground mb-2">
               歲數如歌
             </h1>
             <p className="text-muted-foreground text-sm">

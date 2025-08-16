@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Font Definition */
+@font-face {
+  font-family: 'ChenYu LuoYan';
+  src: url('/fonts/chenyu-luoyan.woff2') format('woff2'),
+       url('/fonts/chenyu-luoyan.woff') format('woff'),
+       url('/fonts/chenyu-luoyan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
