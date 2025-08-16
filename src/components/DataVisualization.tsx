@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, BarChart3 } from "lucide-react";
 import { songs } from "@/data/songs";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Logo } from "@/components/Logo";
 
 interface DataVisualizationProps {
   onBack: () => void;
@@ -37,14 +38,19 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
       chartData.push({
         age: age,
         count: ageGroups[age],
-        label: age >= 1000000 ? `${(age/1000000).toLocaleString()},000,000` : age.toLocaleString()
+        label: age >= 1000000 ? `${(age/1000000).toLocaleString()},000,000` : 
+               age >= 1000 ? `${(age/1000).toLocaleString()},000` : age.toLocaleString()
       });
     }
   });
 
   return (
     <div className="min-h-screen bg-background p-4">
-      <div className="max-w-6xl mx-auto pt-8">
+      <div className="w-full flex justify-center pt-4 pb-4">
+        <Logo className="scale-75" />
+      </div>
+      
+      <div className="max-w-6xl mx-auto">
         <Button 
           onClick={onBack} 
           variant="outline" 
@@ -160,6 +166,15 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          
+          {/* Reserved space for explanatory text */}
+          <div className="mt-8 pt-6 border-t border-border">
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p className="text-sm">
+                {/* 預留位置給解說文字 - 可在此處添加數據分析和見解 */}
+              </p>
             </div>
           </div>
         </Card>

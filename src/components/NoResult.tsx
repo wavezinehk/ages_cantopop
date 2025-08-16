@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Music, Search } from "lucide-react";
+import { Logo } from "@/components/Logo";
 
 interface NoResultProps {
   searchedAge: number;
@@ -10,49 +11,51 @@ interface NoResultProps {
 
 export const NoResult = ({ searchedAge, onBack }: NoResultProps) => {
   return (
-    <div className="min-h-screen bg-gradient-nostalgic p-4">
-      <div className="absolute inset-0 bg-gradient-dreamy opacity-40"></div>
+    <div className="min-h-screen bg-background p-4">
+      <div className="w-full flex justify-center pt-4 pb-4">
+        <Logo className="scale-75" />
+      </div>
       
-      <div className="relative z-10 max-w-2xl mx-auto pt-8">
+      <div className="max-w-2xl mx-auto">
         <Button 
           onClick={onBack} 
           variant="outline" 
-          className="mb-6 bg-card/80 backdrop-blur-sm hover:bg-card/90 transition-smooth"
+          className="mb-6"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Try Another Age
+          重新搜尋
         </Button>
 
-        <Card className="p-8 bg-card/90 backdrop-blur-sm shadow-musical border-0 text-center">
-          <Badge variant="secondary" className="mb-6 text-lg px-4 py-2 bg-gradient-musical">
-            Age {searchedAge}
+        <Card className="p-6 border-0 shadow-lg text-center">
+          <Badge variant="secondary" className="mb-4 text-lg px-4 py-2">
+            {searchedAge} 歲
           </Badge>
           
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-dreamy rounded-full mb-6 opacity-60">
-            <Music className="w-10 h-10 text-foreground" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+            <Music className="w-8 h-8 text-primary" />
           </div>
 
           <h2 className="text-2xl font-bold text-foreground mb-4">
-            No Song Found
+            找不到歌曲
           </h2>
           
           <p className="text-muted-foreground mb-6 leading-relaxed">
-            Unfortunately, we don't have a Cantopop song that specifically references age {searchedAge} in our collection. 
-            The database contains songs from ages -0.1 to 1,000,000 years.
+            很抱歉，我們的資料庫中沒有找到涉及 {searchedAge} 歲的香港流行曲。
+            資料庫涵蓋 -0.1 歲至 1,000,000 歲的歌曲。
           </p>
 
-          <div className="bg-gradient-dreamy/20 rounded-lg p-4 mb-6 border border-musical-blue/30">
+          <div className="bg-muted/50 rounded-lg p-4 mb-6">
             <p className="text-sm text-muted-foreground">
-              <strong>Tip:</strong> Try popular ages like 16, 17, 18, 20, 25, 27, 30, or even unique ones like 100!
+              <strong>建議：</strong>嘗試一些常見的歲數，如 16、17、18、20、25、27、30，或甚至特別的如 100！
             </p>
           </div>
 
           <Button 
             onClick={onBack} 
-            className="bg-gradient-musical hover:scale-105 transition-bounce shadow-soft"
+            className="hover:scale-105 transition-transform"
           >
             <Search className="w-4 h-4 mr-2" />
-            Search Another Age
+            搜尋其他歲數
           </Button>
         </Card>
       </div>
