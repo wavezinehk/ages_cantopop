@@ -42,9 +42,9 @@ export const SongResult = ({ song, searchedAge, onBack, onShowVisualization, onG
             <ArrowLeft className="w-4 h-4 mr-2" />
             重新搜尋
           </Button>
-          <Button onClick={onShowVisualization} variant="outline" size="sm">
+          <Button onClick={onShowVisualization} variant="default" size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
             <BarChart3 className="w-4 h-4 mr-2" />
-            了解數據
+            數據背後
           </Button>
         </div>
 

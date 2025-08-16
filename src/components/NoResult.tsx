@@ -1,15 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Music, Search } from "lucide-react";
+import { ArrowLeft, Music, Search, BarChart3 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 
 interface NoResultProps {
   searchedAge: number;
   onBack: () => void;
+  onShowVisualization: () => void;
 }
 
-export const NoResult = ({ searchedAge, onBack }: NoResultProps) => {
+export const NoResult = ({ searchedAge, onBack, onShowVisualization }: NoResultProps) => {
   return (
     <div className="min-h-screen bg-background p-4">
       <div className="w-full flex justify-center pt-4 pb-4">
@@ -17,14 +18,19 @@ export const NoResult = ({ searchedAge, onBack }: NoResultProps) => {
       </div>
       
       <div className="max-w-2xl mx-auto">
-        <Button 
-          onClick={onBack} 
-          variant="outline" 
-          className="mb-6"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          重新搜尋
-        </Button>
+        <div className="flex justify-between items-center mb-6">
+          <Button 
+            onClick={onBack} 
+            variant="outline"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            重新搜尋
+          </Button>
+          <Button onClick={onShowVisualization} variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
+            <BarChart3 className="w-4 h-4 mr-2" />
+            數據背後
+          </Button>
+        </div>
 
         <Card className="p-6 border-0 shadow-lg text-center">
           <Badge variant="secondary" className="mb-4 text-lg px-4 py-2">
@@ -50,13 +56,24 @@ export const NoResult = ({ searchedAge, onBack }: NoResultProps) => {
             </p>
           </div>
 
-          <Button 
-            onClick={onBack} 
-            className="hover:scale-105 transition-transform"
-          >
-            <Search className="w-4 h-4 mr-2" />
-            搜尋其他歲數
-          </Button>
+          <div className="flex gap-3 justify-center">
+            <Button 
+              onClick={onBack} 
+              variant="outline"
+              className="hover:scale-105 transition-transform"
+            >
+              <Search className="w-4 h-4 mr-2" />
+              搜尋其他歲數
+            </Button>
+            <Button 
+              onClick={onShowVisualization} 
+              variant="default"
+              className="hover:scale-105 transition-transform bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
+            >
+              <BarChart3 className="w-4 h-4 mr-2" />
+              看看數據背後
+            </Button>
+          </div>
         </Card>
       </div>
     </div>

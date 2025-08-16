@@ -66,7 +66,7 @@ const Index = () => {
   }
 
   if (currentView === 'no-result') {
-    return <NoResult searchedAge={searchedAge} onBack={handleBack} />;
+    return <NoResult searchedAge={searchedAge} onBack={handleBack} onShowVisualization={handleShowVisualization} />;
   }
 
   if (currentView === 'visualization') {

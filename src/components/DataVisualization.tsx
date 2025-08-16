@@ -87,10 +87,10 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
               <BarChart3 className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-3xl font-bold text-foreground mb-2">
-              歲數歌曲分佈圖
+              香港流行曲的「歲數」分佈
             </h1>
             <p className="text-muted-foreground">
-              顯示不同歲數的香港流行曲數量統計
+              哪個歲數最多歌？哪些歲數沒有歌？
             </p>
           </div>
 
