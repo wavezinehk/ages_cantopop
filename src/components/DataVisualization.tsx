@@ -4,12 +4,12 @@ import { ArrowLeft, BarChart3 } from "lucide-react";
 import { songs } from "@/data/songs";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Logo } from "@/components/Logo";
-
 interface DataVisualizationProps {
   onBack: () => void;
 }
-
-export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
+export const DataVisualization = ({
+  onBack
+}: DataVisualizationProps) => {
   // Process data to count songs by age
   const ageGroups = songs.reduce((acc, song) => {
     const age = song.age;
@@ -25,9 +25,7 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
   }, {} as Record<string, number>);
 
   // Get top 5 lyricists
-  const topLyricists = Object.entries(lyricistCounts)
-    .sort(([,a], [,b]) => b - a)
-    .slice(0, 5);
+  const topLyricists = Object.entries(lyricistCounts).sort(([, a], [, b]) => b - a).slice(0, 5);
 
   // Create data array for chart
   const chartData = [];
@@ -48,8 +46,8 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
     if (age === 1300) return "1,300";
     if (age === 1000000) return "100萬";
     if (age === 4600000000) return "46億";
-    if (age >= 1000000) return `${(age/1000000).toLocaleString()}萬萬`;
-    if (age >= 1000) return `${(age/1000).toLocaleString()},000`;
+    if (age >= 1000000) return `${(age / 1000000).toLocaleString()}萬萬`;
+    if (age >= 1000) return `${(age / 1000).toLocaleString()},000`;
     return age.toLocaleString();
   };
 
@@ -64,19 +62,13 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
       });
     }
   });
-
-  return (
-    <div className="min-h-screen bg-background p-4">
+  return <div className="min-h-screen bg-background p-4">
       <div className="w-full flex justify-center pt-4 pb-4">
         <Logo className="scale-75" />
       </div>
       
       <div className="max-w-6xl mx-auto">
-        <Button 
-          onClick={onBack} 
-          variant="outline" 
-          className="mb-6"
-        >
+        <Button onClick={onBack} variant="outline" className="mb-6">
           <ArrowLeft className="w-4 h-4 mr-2" />
           返回
         </Button>
@@ -102,63 +94,46 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
               </h3>
               <div className="h-96">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={chartData.filter(d => d.age <= 100)}
-                    margin={{
-                      top: 5,
-                      right: 30,
-                      left: 20,
-                      bottom: 5,
-                    }}
-                  >
+                  <BarChart data={chartData.filter(d => d.age <= 100)} margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5
+                }}>
                     <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
-                    <XAxis 
-                      dataKey="label" 
-                      interval="preserveStartEnd"
-                      tick={{ fontSize: 12 }}
-                    />
-                    <YAxis 
-                      tick={{ fontSize: 12 }}
-                    />
-                    <Tooltip 
-                      formatter={(value, name) => [value, '歌曲數量']}
-                      labelFormatter={(label) => `年齡: ${label}`}
-                      contentStyle={{
-                        backgroundColor: 'hsl(var(--card))',
-                        border: '1px solid hsl(var(--border))',
-                        borderRadius: '6px'
-                      }}
-                    />
-                    <Bar 
-                      dataKey="count" 
-                      fill="hsl(var(--primary))" 
-                      radius={[2, 2, 0, 0]}
-                    />
+                    <XAxis dataKey="label" interval="preserveStartEnd" tick={{
+                    fontSize: 12
+                  }} />
+                    <YAxis tick={{
+                    fontSize: 12
+                  }} />
+                    <Tooltip formatter={(value, name) => [value, '歌曲數量']} labelFormatter={label => `年齡: ${label}`} contentStyle={{
+                    backgroundColor: 'hsl(var(--card))',
+                    border: '1px solid hsl(var(--border))',
+                    borderRadius: '6px'
+                  }} />
+                    <Bar dataKey="count" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
             </div>
 
             {/* Notable high ages */}
-            {chartData.filter(d => d.age > 100).length > 0 && (
-              <div>
+            {chartData.filter(d => d.age > 100).length > 0 && <div>
                 <h3 className="text-lg font-semibold mb-4 text-foreground">
                   特殊高齡歌曲
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {chartData.filter(d => d.age > 100).map((item) => (
-                    <Card key={item.age} className="p-4 text-center">
+                  {chartData.filter(d => d.age > 100).map(item => <Card key={item.age} className="p-4 text-center">
                       <div className="text-2xl font-bold text-primary mb-1">
                         {item.count}
                       </div>
                       <div className="text-sm text-muted-foreground">
                         {item.label}歲
                       </div>
-                    </Card>
-                  ))}
+                    </Card>)}
                 </div>
-              </div>
-            )}
+              </div>}
 
             {/* Summary statistics */}
             <div className="bg-muted/50 rounded-lg p-6">
@@ -177,10 +152,10 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">
                     {(() => {
-                      const maxCount = Math.max(...Object.values(ageGroups));
-                      const ageWithMaxSongs = Object.keys(ageGroups).find(age => ageGroups[Number(age)] === maxCount);
-                      return `${ageWithMaxSongs}歲`;
-                    })()}
+                    const maxCount = Math.max(...Object.values(ageGroups));
+                    const ageWithMaxSongs = Object.keys(ageGroups).find(age => ageGroups[Number(age)] === maxCount);
+                    return `${ageWithMaxSongs}歲`;
+                  })()}
                   </div>
                   <div className="text-sm text-muted-foreground">
                     最多相關歌曲的歲數
@@ -194,16 +169,14 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
                   最多歲數歌曲的填詞人（頭五位）
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
-                  {topLyricists.map(([lyricist, count], index) => (
-                    <div key={lyricist} className="text-center p-3 bg-background rounded-lg">
+                  {topLyricists.map(([lyricist, count], index) => <div key={lyricist} className="text-center p-3 bg-background rounded-lg">
                       <div className="text-lg font-bold text-primary">
                         {count}
                       </div>
                       <div className="text-xs text-muted-foreground">
                         {lyricist}
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -232,9 +205,7 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
                 從這個角度，我們就能理解為何某些歲數特別常見於香港流行歌詞，例如六歲，就經常被填詞人用來代表懵懂無知的童年，如「如何又信六歲聽過的童話」（〈愛我請留言〉）、「不想哭與啼 要人抱我 別犯六歲的錯」（張蔓莎〈你不是可有可無的〉）。
               </p>
               
-              <p>
-                「六歲」等同童年，那老年呢？不少歌詞以八十歲來代表年老、生命將近終結，如「八十歲 到病榻 相伴 我也算是 笑著蓋棺」（E先生 連環不幸事件）、「要 在八十歲跟你大跳土風舞」（人生有幾個十年）。
-              </p>
+              <p>「六歲」等同童年，那老年呢？不少歌詞以八十歲來代表年老、生命將近終結，如「八十歲 到病榻 相伴 我也算是 笑著蓋棺」（〈E先生連環不幸事件〉）、「要 在八十歲跟你大跳土風舞」（〈人生有幾個十年〉）。</p>
               
               <p>
                 整個資料庫之中，六歲和八十歲的相關歌曲正正最多，分別有 13 首及 9 首。
@@ -259,6 +230,5 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
           </div>
         </Card>
       </div>
-    </div>
-  );
+    </div>;
 };
