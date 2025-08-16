@@ -36,7 +36,7 @@ export const AgeInput = ({ onAgeSubmit }: AgeInputProps) => {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <label htmlFor="age" className="text-sm font-medium text-foreground">
+            <label htmlFor="age" className="text-sm font-medium text-foreground text-center block">
               輸入一個歲數
             </label>
             <Input 
