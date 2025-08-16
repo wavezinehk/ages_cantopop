@@ -211,7 +211,7 @@ export const DataVisualization = ({ onBack }: DataVisualizationProps) => {
           
           {/* Explanatory text */}
           <div className="mt-8 pt-6 border-t border-border">
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-sm">
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
               <p>
                 這個「歲數如歌」互動專頁，來自早前在 Threads 看到有人說 26 歲生日將至，問起有沒有關於這個歲數的流行曲？不少網民都熱心留言，也挑起了我們的好奇心：究竟關於歲數的流行曲有幾多？是不是每個歲數都有相關的歌？
               </p>
