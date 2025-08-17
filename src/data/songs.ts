@@ -185,5 +185,4 @@ export const songs: Song[] = [
   { age: 5000, artist: "張敬軒", title: "不同班同學", lyricist: "黃偉文", lyrics: "而同學你 六歲 或五千歲 還看造化", mv: "https://www.youtube.com/watch?v=Uat2vSsa01o" },
   { age: 1000000, artist: "謝霆鋒", title: "活著Viva", lyricist: "林夕", lyrics: "快活到 半日也像活盡一百萬歲", mv: "https://www.youtube.com/watch?v=tZKFGmks6hA" },
   { age: 4600000000, artist: "陳健安", title: "一吻穿越四十六億歲", lyricist: "Oscar Lee", lyrics: "一起出走千百里 敲碎了天地", mv: "https://www.youtube.com/watch?v=tGVz4-7fag8" }
-  { age: 18, artist: "陳奕迅", title: "浮誇", lyricist: "黃偉文", lyrics: "那年十八 母校舞會站著如嘍囉", mv: "https://www.youtube.com/watch?v=poPfmJKRfm8&pp=0gcJCf8Ao7VqN5tD" }
 ];
