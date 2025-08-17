@@ -184,5 +184,15 @@ export const songs: Song[] = [
   { age: 1300, artist: "洪卓立", title: "你好嗎", lyricist: "林若寧", lyrics: "你與我於一千多歲雲層上再會", mv: "https://www.youtube.com/watch?v=C6Mmj2j4i9w" },
   { age: 5000, artist: "張敬軒", title: "不同班同學", lyricist: "黃偉文", lyrics: "而同學你 六歲 或五千歲 還看造化", mv: "https://www.youtube.com/watch?v=Uat2vSsa01o" },
   { age: 1000000, artist: "謝霆鋒", title: "活著Viva", lyricist: "林夕", lyrics: "快活到 半日也像活盡一百萬歲", mv: "https://www.youtube.com/watch?v=tZKFGmks6hA" },
-  { age: 4600000000, artist: "陳健安", title: "一吻穿越四十六億歲", lyricist: "Oscar Lee", lyrics: "一起出走千百里 敲碎了天地", mv: "https://www.youtube.com/watch?v=tGVz4-7fag8" }
+  { age: 4600000000, artist: "陳健安", title: "一吻穿越四十六億歲", lyricist: "Oscar Lee", lyrics: "一起出走千百里 敲碎了天地", mv: "https://www.youtube.com/watch?v=tGVz4-7fag8" },
+  { age: 18, artist: "陳奕迅", title: "浮誇", lyricist: "黃偉文", lyrics: "那年十八 母校舞會 站著如嘍囉", mv: "https://www.youtube.com/watch?v=poPfmJKRfm8" },
+  { age: 81, artist: "李克勤", title: "萬年孤寂", lyricist: "林若寧", lyrics: "八十歲後你沒有婚紗 我可給你送出一束嗎", mv: "https://www.youtube.com/watch?v=aWaswRN9h6c" },
+  { age: 29, artist: "mue", title: "twenty-nine", lyricist: "mue", lyrics: "Heading for the next scenario I'll let you know", mv: "https://www.youtube.com/watch?v=MO094j9weEc" },
+  { age: 30, artist: "my little airport", title: "去信和賣碟", lyricist: "林阿P", lyrics: "差不多三十歲的某天 你會去最後一次二手唱片店", mv: "https://www.youtube.com/watch?v=gQHmVvwagZw" },
+  { age: 7, artist: "楊千嬅", title: "小星星", lyricist: "林夕", lyrics: "當天應該得七歲 我想喝媽媽的汽水", mv: "https://www.youtube.com/watch?v=1rPhXb-j2Pw" },
+  { age: 25, artist: "凡風", title: "廿五", lyricist: "區新明", lyrics: "現在是廿五六歲", mv: "https://www.youtube.com/watch?v=Yfkxpt7bGpw" },
+  { age: 18, artist: "at17", title: "18", lyricist: "周耀輝", lyrics: "前事沒法操控 前面越看越發夢", mv: "https://www.youtube.com/watch?v=zqm5azKS-8c" },
+  { age: 18, artist: "at17", title: "成人禮", lyricist: "陳浩峰", lyrics: "十八 成長中的關口 如何成人 何妨來個愛慾煙酒", mv: "https://www.youtube.com/watch?v=psja0D9iSQU" },
+  { age: 1000000, artist: "黃耀明", title: "人山人海", lyricist: "林夕", lyrics: "翻山去倒海去 百萬人 有百萬歲", mv: "https://www.youtube.com/watch?v=TgS6DKvND5g" },
+  { age: 23, artist: "鄭融", title: "23", lyricist: "陳少琪", lyrics: "今天這少女 快樂夾雜流淚", mv: "https://www.youtube.com/watch?v=_CU5CVNeS54" }
 ];
