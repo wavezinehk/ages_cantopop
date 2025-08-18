@@ -194,5 +194,11 @@ export const songs: Song[] = [
   { age: 18, artist: "at17", title: "18", lyricist: "周耀輝", lyrics: "前事沒法操控 前面越看越發夢", mv: "https://www.youtube.com/watch?v=zqm5azKS-8c" },
   { age: 18, artist: "at17", title: "成人禮", lyricist: "陳浩峰", lyrics: "十八 成長中的關口 如何成人 何妨來個愛慾煙酒", mv: "https://www.youtube.com/watch?v=psja0D9iSQU" },
   { age: 1000000, artist: "黃耀明", title: "人山人海", lyricist: "林夕", lyrics: "翻山去倒海去 百萬人 有百萬歲", mv: "https://www.youtube.com/watch?v=TgS6DKvND5g" },
-  { age: 23, artist: "鄭融", title: "23", lyricist: "陳少琪", lyrics: "今天這少女 快樂夾雜流淚", mv: "https://www.youtube.com/watch?v=_CU5CVNeS54" }
+  { age: 23, artist: "鄭融", title: "23", lyricist: "陳少琪", lyrics: "今天這少女 快樂夾雜流淚", mv: "https://www.youtube.com/watch?v=_CU5CVNeS54" },
+  { age: 30, artist: "柳應廷", title: "JM單身9", lyricist: "黃偉文", lyrics: "雖然快將三張 單身已習慣", mv: "https://www.youtube.com/watch?v=X6ottGWyNuw" },
+  { age: 80, artist: "周國賢", title: "錢七", lyricist: "藍奕邦", lyrics: "到八十歲都當個爆粗 band 友狂熱地控訴", mv: "https://www.youtube.com/watch?v=m2blZtAwkoE" },
+  { age: 1000, artist: "陳健安", title: "時光邊緣的人", lyricist: "Oscar", lyrics: "快將一千歲 擦過身邊萬人", mv: "https://www.youtube.com/watch?v=QqzVA3-1YTw" },
+  { age: 8000, artist: "MC 張天賦", title: "老派約會之必要", lyricist: "黃偉文", lyrics: "只想約會到八千歲 微醉寫詩作對 下去", mv: "https://www.youtube.com/watch?v=u14rrcxENDw" },
+  { age: 4, artist: "藍奕邦", title: "成長", lyricist: "藍奕邦", lyrics: "四歲半 你我到處作樂 結伴到公園之內盪韆鞦", mv: "https://www.youtube.com/watch?v=A-umZM-tC10" },
+  { age: 100, artist: "藍奕邦", title: "身體健康", lyricist: "藍奕邦", lyrics: "要活到過百歲不需拐杖都可跟你相擁", mv: "https://www.youtube.com/watch?v=8E7a47cIJeA" }
 ];
