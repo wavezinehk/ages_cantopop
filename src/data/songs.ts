@@ -114,6 +114,7 @@ export const songs: Song[] = [
   { age: 27, artist: "at17", title: "101727", lyricist: "林夕", lyrics: "越大越易自由暢泳 或是越大越難輕鬆高興", mv: "https://www.youtube.com/watch?v=39dzdFhg4a4" },
   { age: 27, artist: "盧凱彤", title: "Twenty Seven", lyricist: "盧凱彤", lyrics: "I've found the wonders within me, but left them right inside my bed", mv: "https://www.youtube.com/watch?v=8rVMllAOvek" },
   { age: 27, artist: "陳奕迅", title: "陀飛輪", lyricist: "黃偉文", lyrics: "霎眼廿七歲 時日無多 方不敢偷懶", mv: "https://www.youtube.com/watch?v=URUIcYDq3_I" },
+  { age: 27, artist: "陳奕迅", title: "陀飛輪", lyricist: "黃偉文", lyrics: "過去十八歲沒戴錶 不卜", mv: "https://www.youtube.com/watch?v=URUIcYDq3_I" },
   { age: 28, artist: "野仔", title: "年年十八", lyricist: "Jim", lyrics: "廿八過後我青春變賣 一切經過生老病轉得很快", mv: "https://www.youtube.com/watch?v=3EwEaTqwZ5E" },
   { age: 28, artist: "陸家俊", title: "十八歲的憂鬱", lyricist: "向雪懷", lyrics: "二十八歲的憂鬱傷心最易時", mv: "https://www.youtube.com/watch?v=ZMkqPefzqF8" },
   { age: 28, artist: "許冠傑", title: "有酒今朝醉", lyricist: "許冠傑、黎彼得", lyrics: "行年廿八歲 金翡翠 鬢影衣香拖靚女", mv: "https://www.youtube.com/watch?v=XLfCYvUsaPY" },
